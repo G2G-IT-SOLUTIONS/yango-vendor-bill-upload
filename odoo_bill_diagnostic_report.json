@@ -1,0 +1,1826 @@
+{
+    "generated_at": "2026-08-12T17:54:26.022876",
+    "odoo": {
+        "url": "https://production.g2gitsolutions.com",
+        "database": "production",
+        "uid": 1008,
+        "version": {
+            "server_version": "17.0+e-20260723",
+            "server_version_info": [
+                17,
+                0,
+                0,
+                "final",
+                0,
+                "e"
+            ],
+            "server_serie": "17.0",
+            "protocol_version": 1
+        }
+    },
+    "partner_lookup": {
+        "search_field": "yango_contractor_id",
+        "searched_value": "eaaa7a82010f4d1fa1d61c60ecb05a19",
+        "results": [
+            {
+                "id": 2965,
+                "name": "Atekelte Firew",
+                "yango_contractor_id": "eaaa7a82010f4d1fa1d61c60ecb05a19",
+                "is_driver": true,
+                "supplier_rank": 217,
+                "customer_rank": 9,
+                "active": true
+            }
+        ]
+    },
+    "account_2203": {
+        "searched_code": "2203",
+        "results": [
+            {
+                "id": 837,
+                "code": "2203",
+                "name": "Driver Wallet Liability",
+                "account_type": "liability_current",
+                "reconcile": false,
+                "deprecated": false
+            }
+        ]
+    },
+    "tax_3_wh": {
+        "searched_name": "3% WH",
+        "results": [
+            {
+                "id": 19,
+                "name": "3% WH",
+                "amount": -3.0,
+                "amount_type": "percent",
+                "type_tax_use": "purchase",
+                "price_include": false,
+                "active": true,
+                "description": "Withholding 3% rated purchases",
+                "tax_group_id": [
+                    9,
+                    "Withholding 3%"
+                ],
+                "sequence": 1
+            }
+        ]
+    },
+    "analytic_accounts": {
+        "results": [
+            {
+                "id": 2,
+                "name": "Car Branding",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 139,
+                "name": "Driver Support",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 47,
+                "name": "Events and Partners",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 44,
+                "name": "GR",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 7,
+                "name": "GTOG IT Solutions S.C Costs",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Hub",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Influencer and Blogger",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 138,
+                "name": "Internal",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 48,
+                "name": "OHH",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 46,
+                "name": "Other Branding",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Production",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 45,
+                "name": "Public Relation",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 163,
+                "name": "SIM",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 49,
+                "name": "SMM",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Subsidy and Bonus",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 157,
+                "name": "tyre",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    1,
+                    "Yango Demand"
+                ]
+            },
+            {
+                "id": 97,
+                "name": "Benefits",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 172,
+                "name": "Business Analyst",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 11,
+                "name": "Clarity & IT Sol",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 143,
+                "name": "ERP",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 104,
+                "name": "Exec-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Finance-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 103,
+                "name": "HR and Ops-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 105,
+                "name": "Hub-Call Taxi/Salary-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 147,
+                "name": "Insurance SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 121,
+                "name": "Professional Fee/Audit Fee",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 13,
+                "name": "Safaricom",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 12,
+                "name": "Sales & Marketing-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Yango Supply-SA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    3,
+                    "Salary / Salary"
+                ]
+            },
+            {
+                "id": 110,
+                "name": "Insurance",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    22,
+                    "Maintenance / Insurance"
+                ]
+            },
+            {
+                "id": 112,
+                "name": "Loading Unloading",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    24,
+                    "Miscellaneous"
+                ]
+            },
+            {
+                "id": 137,
+                "name": "Petty  Cash",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    24,
+                    "Miscellaneous"
+                ]
+            },
+            {
+                "id": 130,
+                "name": "Tyre  Services",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    24,
+                    "Miscellaneous"
+                ]
+            },
+            {
+                "id": 117,
+                "name": "Income Tax Payable",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    30,
+                    "ERCA"
+                ]
+            },
+            {
+                "id": 135,
+                "name": "Penalty",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    30,
+                    "ERCA"
+                ]
+            },
+            {
+                "id": 116,
+                "name": "Pension Payable",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    30,
+                    "ERCA"
+                ]
+            },
+            {
+                "id": 118,
+                "name": "VAT Payable",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    30,
+                    "ERCA"
+                ]
+            },
+            {
+                "id": 115,
+                "name": "With Holding Tax Payable",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    30,
+                    "ERCA"
+                ]
+            },
+            {
+                "id": 171,
+                "name": "Admin Expense",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 145,
+                "name": "Bank Service Charge",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 170,
+                "name": "Customs Valuation Difference",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 151,
+                "name": "Fuel Expense-Admin",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 162,
+                "name": "Fuel - G2G Yango",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 158,
+                "name": "G to G It Solution Utility Expense",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 152,
+                "name": "Office related Expense",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 119,
+                "name": "Printing WHT Receipt",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 129,
+                "name": "Professional Fee",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 150,
+                "name": "Project cost",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 120,
+                "name": "Purchase Of Stationary",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 155,
+                "name": "Repair cost",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 156,
+                "name": "Travel & Perdium",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    31,
+                    "GTOG Cost/Expense"
+                ]
+            },
+            {
+                "id": 128,
+                "name": "Computer & Accessory",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    32,
+                    "Fixed  Asset"
+                ]
+            },
+            {
+                "id": 141,
+                "name": "Clearance Service Charge",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    33,
+                    "Service Charge"
+                ]
+            },
+            {
+                "id": 146,
+                "name": "Insurance Commission",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    34,
+                    "Insurance"
+                ]
+            },
+            {
+                "id": 173,
+                "name": "Insurance Excess and Contribution",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    34,
+                    "Insurance"
+                ]
+            },
+            {
+                "id": 53,
+                "name": "Insurance Monthly Payment",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    34,
+                    "Insurance"
+                ]
+            },
+            {
+                "id": 142,
+                "name": "Policy Holder Payment",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    34,
+                    "Insurance"
+                ]
+            },
+            {
+                "id": 177,
+                "name": "Agent & Merchant Act.",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    35,
+                    "Tele Birr"
+                ]
+            },
+            {
+                "id": 160,
+                "name": "Cost Of Telebirr",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    35,
+                    "Tele Birr"
+                ]
+            },
+            {
+                "id": 148,
+                "name": "Komlicha-Municipality",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    35,
+                    "Tele Birr"
+                ]
+            },
+            {
+                "id": 159,
+                "name": "Transport Expense",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    35,
+                    "Tele Birr"
+                ]
+            },
+            {
+                "id": 153,
+                "name": "Driver Bonus",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    36,
+                    "Yango"
+                ]
+            },
+            {
+                "id": 174,
+                "name": "Scout",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    36,
+                    "Yango"
+                ]
+            },
+            {
+                "id": 165,
+                "name": "Shuufare Income",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    36,
+                    "Yango"
+                ]
+            },
+            {
+                "id": 54,
+                "name": "Branding",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 8,
+                "name": "BTL Activation",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 50,
+                "name": "Events",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Media",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 52,
+                "name": "SMM",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 51,
+                "name": "Training and Education",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    13,
+                    "Yango Supply"
+                ]
+            },
+            {
+                "id": 113,
+                "name": "Disallowance",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    19,
+                    "Disallowed Expense"
+                ]
+            },
+            {
+                "id": 96,
+                "name": "Entertainment",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    19,
+                    "Disallowed Expense"
+                ]
+            },
+            {
+                "id": 176,
+                "name": "motor",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    20,
+                    "Maintenance"
+                ]
+            },
+            {
+                "id": 98,
+                "name": "Office",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    20,
+                    "Maintenance"
+                ]
+            },
+            {
+                "id": 99,
+                "name": "Vehicles",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    20,
+                    "Maintenance"
+                ]
+            },
+            {
+                "id": 101,
+                "name": "Software Training",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    21,
+                    "Training"
+                ]
+            },
+            {
+                "id": 100,
+                "name": "Staff Training",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    21,
+                    "Training"
+                ]
+            },
+            {
+                "id": 123,
+                "name": "Differed Commission",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 154,
+                "name": "E-Air Time",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 122,
+                "name": "E-CAF Commission",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 16,
+                "name": "EVD",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 132,
+                "name": "Internet",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 30,
+                "name": "SIM-Adama/Assela",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 34,
+                "name": "SIM-Addis Ababa",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 29,
+                "name": "SIM-Ambo",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 31,
+                "name": "SIM-Debre Birhan",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 33,
+                "name": "SIM-Dessie",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 32,
+                "name": "SIM-Nekemt",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 164,
+                "name": "SIM WAAZ",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 92,
+                "name": "SMS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 133,
+                "name": "Staff Card",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 124,
+                "name": "Target Commission (EVD)",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 89,
+                "name": "Telebirr-Agent",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 125,
+                "name": "Tele Birr Commission (Agent registration)",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 126,
+                "name": "Tele Birr Commission (Transaction Com.)",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 127,
+                "name": "Tele Birr Merchant Registration",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 90,
+                "name": "Telebirr-Product",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 91,
+                "name": "VC",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 93,
+                "name": "vISP",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    7,
+                    "Ethio Telecom"
+                ]
+            },
+            {
+                "id": 22,
+                "name": "BSS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 85,
+                "name": "Device",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 86,
+                "name": "Internet",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 95,
+                "name": "Mobile Voucher Card",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 23,
+                "name": "MPESA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 109,
+                "name": "Rent Expense",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 108,
+                "name": "Room Exp.",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 84,
+                "name": "SIM",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    8,
+                    "Safaricom"
+                ]
+            },
+            {
+                "id": 87,
+                "name": "GPS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    18,
+                    "FMS"
+                ]
+            },
+            {
+                "id": 88,
+                "name": "Speed Limiter",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    18,
+                    "FMS"
+                ]
+            },
+            {
+                "id": 161,
+                "name": "BID Document",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 83,
+                "name": "Hardware",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 17,
+                "name": "MSP",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 82,
+                "name": "Networking",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 107,
+                "name": "Network Maintenace",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 18,
+                "name": "Support",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 134,
+                "name": "Transport",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    5,
+                    "IT Solutions"
+                ]
+            },
+            {
+                "id": 71,
+                "name": "Exec Mgmt",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 27,
+                "name": "Finance",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 102,
+                "name": "Fleet",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 36,
+                "name": "HR",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 38,
+                "name": "Sales",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 35,
+                "name": "TIS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 37,
+                "name": "Yango",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    11,
+                    "Fuel"
+                ]
+            },
+            {
+                "id": 57,
+                "name": "8610",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 56,
+                "name": "Exec",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 41,
+                "name": "Finance",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 166,
+                "name": "Fleet",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 42,
+                "name": "HR and OPS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 40,
+                "name": "Hub-Call Taxi/Salary",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 58,
+                "name": "Internet",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 55,
+                "name": "Safaricom",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 43,
+                "name": "Sales and Marketing",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 59,
+                "name": "SMS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 106,
+                "name": "TIS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 39,
+                "name": "Yango Supply",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    12,
+                    "Telephone"
+                ]
+            },
+            {
+                "id": 131,
+                "name": "ADAMA",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 68,
+                "name": "Ambo",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 70,
+                "name": "Cars",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 67,
+                "name": "Debre Birhan",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 63,
+                "name": "Dessie",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 61,
+                "name": "GCC",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 62,
+                "name": "GETAS",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 66,
+                "name": "Kemissie",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 65,
+                "name": "Kombolcha",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 144,
+                "name": "Mexico",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 69,
+                "name": "Nekemt",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 136,
+                "name": "Office  Rent",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 149,
+                "name": "Renovation of Building",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 111,
+                "name": "Rent /Assela",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 60,
+                "name": "WeVenture",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 64,
+                "name": "Woldiya",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    14,
+                    "Rental"
+                ]
+            },
+            {
+                "id": 77,
+                "name": "Car Charger",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 75,
+                "name": "Charger Cable",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 78,
+                "name": "Charger Set",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 72,
+                "name": "Powerbank",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 74,
+                "name": "Solix",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 73,
+                "name": "Soundcore",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 76,
+                "name": "Wall Charger",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    15,
+                    "Anker"
+                ]
+            },
+            {
+                "id": 80,
+                "name": "Non-owned",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    17,
+                    "Fleet"
+                ]
+            },
+            {
+                "id": 79,
+                "name": "Owned",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    17,
+                    "Fleet"
+                ]
+            },
+            {
+                "id": 81,
+                "name": "Rental",
+                "code": false,
+                "active": true,
+                "plan_id": [
+                    17,
+                    "Fleet"
+                ]
+            }
+        ]
+    },
+    "vendor_bill": {
+        "bill_header": [
+            {
+                "id": 959720,
+                "name": "BILL/2026/03/0087",
+                "move_type": "in_invoice",
+                "state": "posted",
+                "partner_id": [
+                    295,
+                    "Berook Moges"
+                ],
+                "ref": "Medical CPV-6939",
+                "invoice_date": "2026-08-12",
+                "date": "2026-03-11",
+                "invoice_date_due": "2026-08-12",
+                "payment_reference": "CPV-6939",
+                "currency_id": [
+                    77,
+                    "ETB"
+                ],
+                "journal_id": [
+                    9,
+                    "Vendor Bills"
+                ],
+                "company_id": [
+                    1,
+                    "GTOG It Solution S.C"
+                ],
+                "amount_untaxed": 10275.0,
+                "amount_tax": 0.0,
+                "amount_total": 10275.0,
+                "invoice_line_ids": [
+                    3488624
+                ]
+            }
+        ],
+        "invoice_lines": [
+            {
+                "id": 3488624,
+                "move_id": [
+                    959720,
+                    "BILL/2026/03/0087 (Medical CPV-6939)"
+                ],
+                "name": "Berook Moges: Medical",
+                "account_id": [
+                    420,
+                    "6210 Medical Expense"
+                ],
+                "quantity": 1.0,
+                "price_unit": 10275.0,
+                "price_subtotal": 10275.0,
+                "price_total": 10275.0,
+                "tax_ids": [],
+                "analytic_distribution": {
+                    "97": 100.0
+                },
+                "product_id": [
+                    344,
+                    "[MEDEX] Medical Expense"
+                ],
+                "partner_id": [
+                    295,
+                    "Berook Moges"
+                ],
+                "currency_id": [
+                    77,
+                    "ETB"
+                ]
+            }
+        ],
+        "tax_details": [],
+        "partner_details": [
+            {
+                "id": 295,
+                "name": "Berook Moges",
+                "yango_contractor_id": false,
+                "is_driver": false,
+                "supplier_rank": 148
+            }
+        ]
+    },
+    "field_information": {
+        "res.partner.yango_contractor_id": {
+            "yango_contractor_id": {
+                "readonly": false,
+                "required": false,
+                "string": "Contractor ID",
+                "type": "char"
+            }
+        },
+        "res.partner.is_driver": {
+            "is_driver": {
+                "readonly": false,
+                "required": false,
+                "string": "Is Driver",
+                "type": "boolean"
+            }
+        },
+        "account.move.payment_reference": {
+            "payment_reference": {
+                "readonly": false,
+                "required": false,
+                "string": "Payment Reference",
+                "type": "char"
+            }
+        },
+        "account.move.invoice_date_due": {
+            "invoice_date_due": {
+                "readonly": false,
+                "required": false,
+                "string": "Due Date",
+                "type": "date"
+            }
+        },
+        "account.move.line.analytic_distribution": {
+            "analytic_distribution": {
+                "readonly": false,
+                "required": false,
+                "string": "Analytic Distribution",
+                "type": "json"
+            }
+        }
+    },
+    "models": {
+        "res.partner": {
+            "read_access": true
+        },
+        "account.move": {
+            "read_access": true
+        },
+        "account.move.line": {
+            "read_access": true
+        },
+        "account.account": {
+            "read_access": true
+        },
+        "account.tax": {
+            "read_access": true
+        },
+        "account.analytic.account": {
+            "read_access": true
+        }
+    }
+}

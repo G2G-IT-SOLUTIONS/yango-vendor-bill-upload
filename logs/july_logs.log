@@ -1,0 +1,149 @@
+2026-08-15 13:35:28,592 | INFO | ================================================================================
+2026-08-15 13:35:28,592 | INFO | YANGO VENDOR BILL IMPORT START
+2026-08-15 13:35:28,592 | INFO | Input: C:\Projects\G2G Group\yango-vendor-bill-upload\bills\july.csv
+2026-08-15 13:35:28,593 | INFO | Output CSV: C:\Projects\G2G Group\yango-vendor-bill-upload\logs\july_logs.csv
+2026-08-15 13:35:28,593 | INFO | DRY_RUN: False
+2026-08-15 13:35:28,593 | INFO | MAX_RECORDS: 100000
+2026-08-15 13:35:28,593 | INFO | ACCOUNTING_DATE_MODE: bill_date
+2026-08-15 13:35:28,593 | INFO | Account / Tax / Analytic Distribution: all read per-row from the CSV. No hardcoded fallback for any of them. An empty Tax cell means no withholding.
+2026-08-15 13:35:28,593 | INFO | ================================================================================
+2026-08-15 13:35:29,553 | INFO | Connected to Odoo https://production.g2gitsolutions.com | DB=production | UID=748 | Version=17.0+e-20260723
+2026-08-15 13:35:30,114 | INFO | Payment journal: Tele Short Code 525020 | ID=59 | type=bank
+2026-08-15 13:35:30,441 | WARNING | DUPLICATE | row=2 | ref=CG89EDFT35 | existing_bill=964341 | state=posted | payment_state=in_payment
+2026-08-15 13:35:30,719 | WARNING | DUPLICATE | row=3 | ref=CG88EDFGPA | existing_bill=964343 | state=posted | payment_state=in_payment
+2026-08-15 13:35:30,999 | WARNING | DUPLICATE | row=4 | ref=CG87EDFHGR | existing_bill=964345 | state=posted | payment_state=in_payment
+2026-08-15 13:35:31,292 | WARNING | DUPLICATE | row=5 | ref=CG85EDFNW3 | existing_bill=964347 | state=posted | payment_state=in_payment
+2026-08-15 13:35:31,583 | WARNING | DUPLICATE | row=6 | ref=CG88EDFT34 | existing_bill=964349 | state=posted | payment_state=in_payment
+2026-08-15 13:35:31,837 | WARNING | DUPLICATE | row=7 | ref=CG88EDFHGS | existing_bill=964353 | state=posted | payment_state=in_payment
+2026-08-15 13:35:32,147 | WARNING | DUPLICATE | row=8 | ref=CG89EDFGPB | existing_bill=964355 | state=posted | payment_state=in_payment
+2026-08-15 13:35:32,437 | WARNING | DUPLICATE | row=9 | ref=CG81EDFSEH | existing_bill=964357 | state=posted | payment_state=in_payment
+2026-08-15 13:35:32,719 | WARNING | DUPLICATE | row=10 | ref=CG89EDFHGT | existing_bill=964359 | state=posted | payment_state=in_payment
+2026-08-15 13:35:33,004 | WARNING | DUPLICATE | row=11 | ref=CG87EDFGP9 | existing_bill=964361 | state=posted | payment_state=in_payment
+2026-08-15 13:35:33,291 | WARNING | DUPLICATE | row=12 | ref=CG88EDFT48 | existing_bill=964363 | state=posted | payment_state=in_payment
+2026-08-15 13:35:33,585 | WARNING | DUPLICATE | row=13 | ref=CG81EDFMFH | existing_bill=964365 | state=posted | payment_state=in_payment
+2026-08-15 13:35:33,852 | WARNING | DUPLICATE | row=14 | ref=CG80EDFMFG | existing_bill=964367 | state=posted | payment_state=in_payment
+2026-08-15 13:35:34,132 | WARNING | DUPLICATE | row=15 | ref=CG87EDFGQD | existing_bill=964369 | state=posted | payment_state=in_payment
+2026-08-15 13:35:34,413 | WARNING | DUPLICATE | row=16 | ref=CG88EDFHHW | existing_bill=964371 | state=posted | payment_state=in_payment
+2026-08-15 13:35:34,691 | WARNING | DUPLICATE | row=17 | ref=CG85EDFGQB | existing_bill=964373 | state=posted | payment_state=in_payment
+2026-08-15 13:35:34,972 | WARNING | DUPLICATE | row=18 | ref=CG86EDFGQC | existing_bill=964375 | state=posted | payment_state=in_payment
+2026-08-15 13:35:35,254 | WARNING | DUPLICATE | row=19 | ref=CG89EDFN59 | existing_bill=964377 | state=posted | payment_state=in_payment
+2026-08-15 13:35:35,548 | WARNING | DUPLICATE | row=20 | ref=CG84EDFGQA | existing_bill=964379 | state=posted | payment_state=in_payment
+2026-08-15 13:35:35,816 | WARNING | DUPLICATE | row=21 | ref=CG82EDFMFI | existing_bill=964381 | state=posted | payment_state=in_payment
+2026-08-15 13:35:36,098 | WARNING | DUPLICATE | row=22 | ref=CG81EDFIYH | existing_bill=964383 | state=posted | payment_state=in_payment
+2026-08-15 13:35:36,386 | WARNING | DUPLICATE | row=23 | ref=CG88EDFKYW | existing_bill=964385 | state=posted | payment_state=in_payment
+2026-08-15 13:35:36,691 | WARNING | DUPLICATE | row=24 | ref=CG81EDFNXX | existing_bill=964387 | state=posted | payment_state=in_payment
+2026-08-15 13:35:36,978 | WARNING | DUPLICATE | row=25 | ref=CG80EDFNXW | existing_bill=964389 | state=posted | payment_state=in_payment
+2026-08-15 13:35:37,267 | WARNING | DUPLICATE | row=26 | ref=CG81EDFN6P | existing_bill=964391 | state=posted | payment_state=in_payment
+2026-08-15 13:35:37,538 | WARNING | DUPLICATE | row=27 | ref=CG80EDFIYG | existing_bill=964393 | state=posted | payment_state=in_payment
+2026-08-15 13:35:37,813 | WARNING | DUPLICATE | row=28 | ref=CG80EDFN6O | existing_bill=964395 | state=posted | payment_state=in_payment
+2026-08-15 13:35:38,099 | WARNING | DUPLICATE | row=29 | ref=CG87EDFMG7 | existing_bill=964397 | state=posted | payment_state=in_payment
+2026-08-15 13:35:38,383 | WARNING | DUPLICATE | row=30 | ref=CG81EDFQ7L | existing_bill=964399 | state=posted | payment_state=in_payment
+2026-08-15 13:35:38,667 | WARNING | DUPLICATE | row=31 | ref=CG81EDFW6B | existing_bill=964401 | state=posted | payment_state=in_payment
+2026-08-15 13:35:38,950 | WARNING | DUPLICATE | row=32 | ref=CG89EDFQ8X | existing_bill=964403 | state=posted | payment_state=in_payment
+2026-08-15 13:35:39,237 | WARNING | DUPLICATE | row=33 | ref=CG88EDFQ8W | existing_bill=964405 | state=posted | payment_state=in_payment
+2026-08-15 13:35:39,528 | WARNING | DUPLICATE | row=34 | ref=CG82EDFL04 | existing_bill=964407 | state=posted | payment_state=in_payment
+2026-08-15 13:35:39,791 | WARNING | DUPLICATE | row=35 | ref=CG81EDFL03 | existing_bill=964409 | state=posted | payment_state=in_payment
+2026-08-15 13:35:40,076 | WARNING | DUPLICATE | row=36 | ref=CG86EDFJ00 | existing_bill=964411 | state=posted | payment_state=in_payment
+2026-08-15 13:35:40,353 | WARNING | DUPLICATE | row=37 | ref=CG87EDFQ8V | existing_bill=964413 | state=posted | payment_state=in_payment
+2026-08-15 13:35:40,627 | WARNING | DUPLICATE | row=38 | ref=CG83EDFMHR | existing_bill=964415 | state=posted | payment_state=in_payment
+2026-08-15 13:35:40,902 | WARNING | DUPLICATE | row=39 | ref=CG83EDFL05 | existing_bill=964417 | state=posted | payment_state=in_payment
+2026-08-15 13:35:41,186 | WARNING | DUPLICATE | row=40 | ref=CG88EDFNYY | existing_bill=964419 | state=posted | payment_state=in_payment
+2026-08-15 13:35:41,469 | WARNING | DUPLICATE | row=41 | ref=CG89EDFNYZ | existing_bill=964421 | state=posted | payment_state=in_payment
+2026-08-15 13:35:41,738 | WARNING | DUPLICATE | row=42 | ref=CG85EDFL1L | existing_bill=964423 | state=posted | payment_state=in_payment
+2026-08-15 13:35:42,008 | WARNING | DUPLICATE | row=43 | ref=CG80EDFO04 | existing_bill=964425 | state=posted | payment_state=in_payment
+2026-08-15 13:35:42,293 | WARNING | DUPLICATE | row=44 | ref=CG81EDFJ0P | existing_bill=964427 | state=posted | payment_state=in_payment
+2026-08-15 13:35:42,589 | WARNING | DUPLICATE | row=45 | ref=CG89EDFO03 | existing_bill=964429 | state=posted | payment_state=in_payment
+2026-08-15 13:35:42,857 | WARNING | DUPLICATE | row=46 | ref=CG87EDFMIZ | existing_bill=964431 | state=posted | payment_state=in_payment
+2026-08-15 13:35:43,147 | WARNING | DUPLICATE | row=47 | ref=CG80EDFJ0O | existing_bill=964433 | state=posted | payment_state=in_payment
+2026-08-15 13:35:43,430 | WARNING | DUPLICATE | row=48 | ref=CG86EDFL1M | existing_bill=964436 | state=posted | payment_state=in_payment
+2026-08-15 13:35:43,703 | WARNING | DUPLICATE | row=49 | ref=CG87EDFQ9P | existing_bill=964438 | state=posted | payment_state=in_payment
+2026-08-15 13:35:43,968 | WARNING | DUPLICATE | row=50 | ref=CG81EDFO05 | existing_bill=964440 | state=posted | payment_state=in_payment
+2026-08-15 13:35:44,247 | WARNING | DUPLICATE | row=51 | ref=CG82EDFLR2 | existing_bill=964442 | state=posted | payment_state=in_payment
+2026-08-15 13:35:44,542 | WARNING | DUPLICATE | row=52 | ref=CG89EDFYHV | existing_bill=964444 | state=posted | payment_state=in_payment
+2026-08-15 13:35:44,813 | WARNING | DUPLICATE | row=53 | ref=CG82EDFL2M | existing_bill=964446 | state=posted | payment_state=in_payment
+2026-08-15 13:35:45,095 | WARNING | DUPLICATE | row=54 | ref=CG86EDFN9W | existing_bill=964448 | state=posted | payment_state=in_payment
+2026-08-15 13:35:45,388 | WARNING | DUPLICATE | row=55 | ref=CG84EDFLSI | existing_bill=964450 | state=posted | payment_state=in_payment
+2026-08-15 13:35:45,678 | WARNING | DUPLICATE | row=56 | ref=CG86EDFQBC | existing_bill=964452 | state=posted | payment_state=in_payment
+2026-08-15 13:35:45,954 | WARNING | DUPLICATE | row=57 | ref=CG88EDFN9Y | existing_bill=964454 | state=posted | payment_state=in_payment
+2026-08-15 13:35:46,236 | WARNING | DUPLICATE | row=58 | ref=CG88EDFYHU | existing_bill=964456 | state=posted | payment_state=in_payment
+2026-08-15 13:35:46,523 | WARNING | DUPLICATE | row=59 | ref=CG87EDFN9X | existing_bill=964458 | state=posted | payment_state=in_payment
+2026-08-15 13:35:46,799 | WARNING | DUPLICATE | row=60 | ref=CG80EDFYHW | existing_bill=964460 | state=posted | payment_state=in_payment
+2026-08-15 13:35:47,097 | WARNING | DUPLICATE | row=61 | ref=CG81EDFMK7 | existing_bill=964462 | state=posted | payment_state=in_payment
+2026-08-15 13:35:47,377 | WARNING | DUPLICATE | row=62 | ref=CG83EDFL3H | existing_bill=964464 | state=posted | payment_state=in_payment
+2026-08-15 13:35:47,520 | ERROR | FAILED | row=63 | vendor=68d2efba8f994330a20e181da78b997b | ref=CG87EDFYIX | error=Expected exactly one driver for Vendor ID='68d2efba8f994330a20e181da78b997b' Partner='DOJI WORDOFA BEDANE', found 0: []
+2026-08-15 13:35:47,545 | ERROR | Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1186, in main
+    result = process_row(
+        row_number,
+        row,
+        payment_journal,
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 888, in process_row
+    partner = find_partner(vendor_id, partner_name)
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 521, in find_partner
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Expected exactly one driver for Vendor ID='68d2efba8f994330a20e181da78b997b' Partner='DOJI WORDOFA BEDANE', found 0: []
+
+2026-08-15 13:35:47,810 | WARNING | DUPLICATE | row=64 | ref=CG86EDFNBA | existing_bill=964466 | state=posted | payment_state=in_payment
+2026-08-15 13:35:48,086 | WARNING | DUPLICATE | row=65 | ref=CG88EDFQCI | existing_bill=964468 | state=posted | payment_state=in_payment
+2026-08-15 13:35:48,361 | WARNING | DUPLICATE | row=66 | ref=CG88EDFNBC | existing_bill=964470 | state=posted | payment_state=in_payment
+2026-08-15 13:35:48,656 | WARNING | DUPLICATE | row=67 | ref=CG89EDFQCJ | existing_bill=964472 | state=posted | payment_state=in_payment
+2026-08-15 13:35:48,930 | WARNING | DUPLICATE | row=68 | ref=CG87EDFNBB | existing_bill=964474 | state=posted | payment_state=in_payment
+2026-08-15 13:35:49,223 | WARNING | DUPLICATE | row=69 | ref=CG88EDFZ9W | existing_bill=964476 | state=posted | payment_state=in_payment
+2026-08-15 13:35:49,510 | WARNING | DUPLICATE | row=70 | ref=CG89EDFZ9X | existing_bill=964478 | state=posted | payment_state=in_payment
+2026-08-15 13:35:49,795 | WARNING | DUPLICATE | row=71 | ref=CG86EDFYIW | existing_bill=964480 | state=posted | payment_state=in_payment
+2026-08-15 13:35:50,076 | WARNING | DUPLICATE | row=72 | ref=CG82EDFLUO | existing_bill=964482 | state=posted | payment_state=in_payment
+2026-08-15 13:35:50,351 | WARNING | DUPLICATE | row=73 | ref=CG85EDFLUR | existing_bill=964484 | state=posted | payment_state=in_payment
+2026-08-15 13:35:50,636 | WARNING | DUPLICATE | row=74 | ref=CG85EDFL57 | existing_bill=964486 | state=posted | payment_state=in_payment
+2026-08-15 13:35:50,916 | WARNING | DUPLICATE | row=75 | ref=CG84EDFLUQ | existing_bill=964488 | state=posted | payment_state=in_payment
+2026-08-15 13:35:51,194 | WARNING | DUPLICATE | row=76 | ref=CG88EDFNC6 | existing_bill=964490 | state=posted | payment_state=in_payment
+2026-08-15 13:35:51,479 | WARNING | DUPLICATE | row=77 | ref=CG82EDFMMG | existing_bill=964492 | state=posted | payment_state=in_payment
+2026-08-15 13:35:51,746 | WARNING | DUPLICATE | row=78 | ref=CG84EDFZBG | existing_bill=964494 | state=posted | payment_state=in_payment
+2026-08-15 13:35:52,029 | WARNING | DUPLICATE | row=79 | ref=CG82EDFZBE | existing_bill=964496 | state=posted | payment_state=in_payment
+2026-08-15 13:35:52,303 | WARNING | DUPLICATE | row=80 | ref=CG83EDFZBF | existing_bill=964498 | state=posted | payment_state=in_payment
+2026-08-15 13:35:52,588 | WARNING | DUPLICATE | row=81 | ref=CG81EDFMMF | existing_bill=964500 | state=posted | payment_state=in_payment
+2026-08-15 13:35:52,861 | WARNING | DUPLICATE | row=82 | ref=CG84EDFVMO | existing_bill=964502 | state=posted | payment_state=in_payment
+2026-08-15 13:35:53,143 | WARNING | DUPLICATE | row=83 | ref=CG80EDFTCC | existing_bill=964504 | state=posted | payment_state=in_payment
+2026-08-15 13:35:53,423 | WARNING | DUPLICATE | row=84 | ref=CG85EDFZCL | existing_bill=964506 | state=posted | payment_state=in_payment
+2026-08-15 13:35:53,699 | WARNING | DUPLICATE | row=85 | ref=CG82EDFMNU | existing_bill=964508 | state=posted | payment_state=in_payment
+2026-08-15 13:35:53,980 | WARNING | DUPLICATE | row=86 | ref=CG80EDFLW0 | existing_bill=964510 | state=posted | payment_state=in_payment
+2026-08-15 13:35:54,267 | WARNING | DUPLICATE | row=87 | ref=CG81EDFMNT | existing_bill=964512 | state=posted | payment_state=in_payment
+2026-08-15 13:35:54,560 | WARNING | DUPLICATE | row=88 | ref=CG83EDFVMN | existing_bill=964514 | state=posted | payment_state=in_payment
+2026-08-15 13:35:54,834 | WARNING | DUPLICATE | row=89 | ref=CG89EDFTCB | existing_bill=964516 | state=posted | payment_state=in_payment
+2026-08-15 13:35:55,111 | WARNING | DUPLICATE | row=90 | ref=CG84EDFZCK | existing_bill=964518 | state=posted | payment_state=in_payment
+2026-08-15 13:35:55,385 | WARNING | DUPLICATE | row=91 | ref=CG86EDFZCM | existing_bill=964520 | state=posted | payment_state=in_payment
+2026-08-15 13:35:55,678 | WARNING | DUPLICATE | row=92 | ref=CG85EDFLX9 | existing_bill=964522 | state=posted | payment_state=in_payment
+2026-08-15 13:35:55,949 | WARNING | DUPLICATE | row=93 | ref=CG89EDFTDF | existing_bill=964524 | state=posted | payment_state=in_payment
+2026-08-15 13:35:56,233 | WARNING | DUPLICATE | row=94 | ref=CG85EDFVNT | existing_bill=964526 | state=posted | payment_state=in_payment
+2026-08-15 13:35:56,510 | WARNING | DUPLICATE | row=95 | ref=CG82EDFXU2 | existing_bill=964528 | state=posted | payment_state=in_payment
+2026-08-15 13:35:56,790 | WARNING | DUPLICATE | row=96 | ref=CG84EDFVNS | existing_bill=964530 | state=posted | payment_state=in_payment
+2026-08-15 13:35:57,073 | WARNING | DUPLICATE | row=97 | ref=CG84EDFLX8 | existing_bill=964532 | state=posted | payment_state=in_payment
+2026-08-15 13:35:57,357 | WARNING | DUPLICATE | row=98 | ref=CG89EDFZDJ | existing_bill=964534 | state=posted | payment_state=in_payment
+2026-08-15 13:35:57,630 | WARNING | DUPLICATE | row=99 | ref=CG88EDFZDI | existing_bill=964536 | state=posted | payment_state=in_payment
+2026-08-15 13:35:57,910 | WARNING | DUPLICATE | row=100 | ref=CG88EDFPNS | existing_bill=964538 | state=posted | payment_state=in_payment
+2026-08-15 13:35:58,195 | WARNING | DUPLICATE | row=101 | ref=CG81EDFL7L | existing_bill=964540 | state=posted | payment_state=in_payment
+2026-08-15 13:35:58,196 | INFO | PROGRESS | processed=100 | completed=0 | duplicates=99 | failed=1 | dry_run=0
+2026-08-15 13:35:58,483 | WARNING | DUPLICATE | row=102 | ref=CG82EDFLY0 | existing_bill=964542 | state=posted | payment_state=in_payment
+2026-08-15 13:35:58,738 | WARNING | DUPLICATE | row=103 | ref=CG83EDFLY1 | existing_bill=964544 | state=posted | payment_state=in_payment
+2026-08-15 13:35:59,021 | WARNING | DUPLICATE | row=104 | ref=CG86EDFOXW | existing_bill=964546 | state=posted | payment_state=in_payment
+2026-08-15 13:35:59,298 | WARNING | DUPLICATE | row=105 | ref=CG80EDFPOY | existing_bill=964548 | state=posted | payment_state=in_payment
+2026-08-15 13:35:59,559 | WARNING | DUPLICATE | row=106 | ref=CG80EDFXVO | existing_bill=964550 | state=posted | payment_state=in_payment
+2026-08-15 13:35:59,818 | WARNING | DUPLICATE | row=107 | ref=CG82EDFMP8 | existing_bill=964553 | state=posted | payment_state=in_payment
+2026-08-15 13:36:00,096 | WARNING | DUPLICATE | row=108 | ref=CG81EDFPOZ | existing_bill=964555 | state=posted | payment_state=in_payment
+2026-08-15 13:36:00,387 | WARNING | DUPLICATE | row=109 | ref=CG87EDFOXX | existing_bill=964557 | state=posted | payment_state=in_payment
+2026-08-15 13:36:00,679 | WARNING | DUPLICATE | row=110 | ref=CG86EDFL8K | existing_bill=964559 | state=posted | payment_state=in_payment
+2026-08-15 13:36:00,956 | WARNING | DUPLICATE | row=111 | ref=CG89EDFXVN | existing_bill=964561 | state=posted | payment_state=in_payment
+2026-08-15 13:36:01,236 | WARNING | DUPLICATE | row=112 | ref=CG80EDFOYU | existing_bill=964563 | state=posted | payment_state=in_payment
+2026-08-15 13:36:01,517 | WARNING | DUPLICATE | row=113 | ref=CG87EDFMR1 | existing_bill=964565 | state=posted | payment_state=in_payment
+2026-08-15 13:36:01,789 | WARNING | DUPLICATE | row=114 | ref=CG82EDFPQ4 | existing_bill=964567 | state=posted | payment_state=in_payment
+2026-08-15 13:36:02,067 | WARNING | DUPLICATE | row=115 | ref=CG88EDFVQ4 | existing_bill=964569 | state=posted | payment_state=in_payment
+2026-08-15 13:36:02,364 | WARNING | DUPLICATE | row=116 | ref=CG80EDFRZQ | existing_bill=964571 | state=posted | payment_state=in_payment
+2026-08-15 13:36:02,645 | WARNING | DUPLICATE | row=117 | ref=CG88EDFMR2 | existing_bill=964573 | state=posted | payment_state=in_payment
+2026-08-15 13:36:02,925 | WARNING | DUPLICATE | row=118 | ref=CG82EDFOYW | existing_bill=964575 | state=posted | payment_state=in_payment
+2026-08-15 13:36:03,206 | WARNING | DUPLICATE | row=119 | ref=CG84EDFL9C | existing_bill=964577 | state=posted | payment_state=in_payment
+2026-08-15 13:36:03,491 | WARNING | DUPLICATE | row=120 | ref=CG81EDFOYV | existing_bill=964579 | state=posted | payment_state=in_payment
+2026-08-15 13:36:03,768 | WARNING | DUPLICATE | row=121 | ref=CG81EDFRZR | existing_bill=964581 | state=posted | payment_state=in_payment
+2026-08-15 13:36:04,046 | WARNING | DUPLICATE | row=122 | ref=CG86EDFP0O | existing_bill=964585 | state=posted | payment_state=in_payment
+2026-08-15 13:36:04,332 | WARNING | DUPLICATE | row=123 | ref=CG82EDFS0W | existing_bill=964587 | state=posted | payment_state=in_payment
