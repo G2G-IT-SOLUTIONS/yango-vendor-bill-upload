@@ -1,0 +1,17 @@
+2026-08-15 10:54:13,797 | INFO | ================================================================================
+2026-08-15 10:54:13,801 | INFO | YANGO VENDOR BILL IMPORT START
+2026-08-15 10:54:13,802 | INFO | Input: /home/yango/yango-vendor-bill-upload/input.csv
+2026-08-15 10:54:13,802 | INFO | Output CSV: /home/yango/yango-vendor-bill-upload/logs/input_logs.csv
+2026-08-15 10:54:13,805 | INFO | DRY_RUN: True
+2026-08-15 10:54:13,806 | INFO | MAX_RECORDS: 5
+2026-08-15 10:54:13,807 | INFO | ACCOUNTING_DATE_MODE: month_end
+2026-08-15 10:54:13,810 | INFO | Account / Tax / Analytic Distribution: all read per-row from the CSV. No hardcoded fallback for any of them. An empty Tax cell means no withholding.
+2026-08-15 10:54:13,812 | INFO | ================================================================================
+2026-08-15 10:54:13,813 | ERROR | FATAL ERROR: Input CSV not found: /home/yango/yango-vendor-bill-upload/input.csv
+2026-08-15 10:54:13,820 | ERROR | Traceback (most recent call last):
+  File "/home/yango/yango-vendor-bill-upload/vendor_bill_importer.py", line 1262, in <module>
+    main()
+  File "/home/yango/yango-vendor-bill-upload/vendor_bill_importer.py", line 1090, in main
+    raise FileNotFoundError(
+FileNotFoundError: Input CSV not found: /home/yango/yango-vendor-bill-upload/input.csv
+
