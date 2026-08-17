@@ -29,6 +29,8 @@ Optional .env:
     MAX_RECORDS=5                    # 0 = no limit
     BATCH_SIZE=100
     LOG_DIR=logs
+    RPC_MAX_RETRIES=3
+    RPC_RETRY_DELAY_SECONDS=3
 
 CSV columns expected:
     Partner
@@ -44,23 +46,37 @@ CSV columns expected:
     Invoice lines/Taxes
 
 Driver identification:
-    - Vendor ID present: match on Vendor ID AND Partner name together
-      (cross-check, both must match the same driver record).
-    - Vendor ID empty: match on Partner name alone.
+    - Vendor ID present: fetched by Vendor ID (the trusted primary key).
+      The Partner name is cross-checked (case-insensitive, whitespace-
+      normalized) purely for visibility — a mismatch is logged as a
+      warning but does NOT fail the row. Vendor ID always wins.
+    - Vendor ID empty: matched on Partner name alone, same normalized
+      comparison.
     - Both empty: row fails.
 
 Per-row financial fields (no fallback to any hardcoded config):
-    - Invoice lines/Account   -> REQUIRED. Row fails if empty.
+    - Invoice lines/Account   -> REQUIRED. Row fails if empty. Matched
+                                 by exact code.
     - Invoice lines/Taxes     -> OPTIONAL. Empty means NO withholding tax
                                  is applied to that line (not an error).
+                                 When present, matched case-insensitively
+                                 and whitespace-normalized.
     - Invoice lines/Analytic Distribution -> REQUIRED. Row fails if empty.
+
+Network resilience:
+    - Every Odoo RPC call is retried automatically on transient network
+      errors (DNS resolution failures, connection resets, timeouts) up
+      to RPC_MAX_RETRIES times with a delay between attempts, so a
+      momentary internet blip mid-run doesn't fail a row unnecessarily.
 """
 
 import csv
 import json
 import logging
 import os
+import socket
 import sys
+import time
 import traceback
 import xmlrpc.client
 from datetime import date, datetime
@@ -95,6 +111,9 @@ ACCOUNTING_DATE_MODE = os.getenv("ACCOUNTING_DATE_MODE", "month_end").strip().lo
 
 PAYMENT_JOURNAL_ID = os.getenv("PAYMENT_JOURNAL_ID", "").strip()
 PAYMENT_JOURNAL_NAME = os.getenv("PAYMENT_JOURNAL_NAME", "").strip()
+
+RPC_MAX_RETRIES = int(os.getenv("RPC_MAX_RETRIES", "3"))
+RPC_RETRY_DELAY_SECONDS = float(os.getenv("RPC_RETRY_DELAY_SECONDS", "3"))
 
 LOG_ROOT = Path(os.getenv("LOG_DIR", "logs"))
 if not LOG_ROOT.is_absolute():
@@ -161,16 +180,49 @@ common = None
 models = None
 uid = None
 
+# Transient network errors worth retrying automatically. socket.gaierror
+# (DNS resolution failures like "Temporary failure in name resolution"),
+# TimeoutError, and ConnectionError/OSError cover the common cases of a
+# momentary internet blip.
+_TRANSIENT_NETWORK_ERRORS = (
+    socket.gaierror,
+    ConnectionError,
+    TimeoutError,
+    OSError,
+    xmlrpc.client.ProtocolError,
+)
+
 
 def rpc(model, method, args=None, kwargs=None):
-    return models.execute_kw(
-        ODOO_DB,
-        uid,
-        ODOO_PASSWORD,
-        model,
-        method,
-        args or [],
-        kwargs or {},
+    last_exc = None
+
+    for attempt in range(1, RPC_MAX_RETRIES + 1):
+        try:
+            return models.execute_kw(
+                ODOO_DB,
+                uid,
+                ODOO_PASSWORD,
+                model,
+                method,
+                args or [],
+                kwargs or {},
+            )
+        except _TRANSIENT_NETWORK_ERRORS as exc:
+            last_exc = exc
+            logger.warning(
+                "RPC transient network error (attempt %s/%s) on %s.%s: %s",
+                attempt,
+                RPC_MAX_RETRIES,
+                model,
+                method,
+                exc,
+            )
+            if attempt < RPC_MAX_RETRIES:
+                time.sleep(RPC_RETRY_DELAY_SECONDS)
+
+    raise RuntimeError(
+        f"RPC call {model}.{method} failed after {RPC_MAX_RETRIES} "
+        f"attempts due to a network error: {last_exc}"
     )
 
 
@@ -260,6 +312,12 @@ def find_tax_by_name(name):
     Resolve an account.tax by its name, as given per-row in the CSV.
     Only called when the CSV's tax cell is non-empty; an empty cell
     means no withholding tax and this function is not invoked.
+
+    Exact match only, deliberately — no normalization/guessing here.
+    If a tax name from the CSV doesn't match, run list_taxes.py to see
+    exactly how taxes are configured in Odoo (name, id, amount) and
+    either fix the CSV value or confirm the correct exact string,
+    rather than the script silently widening what counts as a match.
     """
     name = clean(name)
 
@@ -290,7 +348,9 @@ def find_tax_by_name(name):
     if len(rows) != 1:
         raise ValueError(
             f"Expected exactly one active purchase tax named "
-            f"{name!r}, found {len(rows)}: {rows}"
+            f"{name!r}, found {len(rows)}: {rows}. "
+            "Run list_taxes.py to see the exact tax names configured "
+            "in Odoo."
         )
 
     _tax_cache[name] = rows[0]
@@ -369,6 +429,16 @@ def clean(value):
     if value is None:
         return ""
     return str(value).strip()
+
+
+def _normalize_name(value):
+    """
+    Case-insensitive, whitespace-collapsed form of a name/label, used
+    for tolerant matching (partner names, tax names) so that ALL CAPS,
+    extra spaces, or minor formatting differences don't cause a real
+    match to be missed.
+    """
+    return " ".join(clean(value).split()).casefold()
 
 
 def parse_decimal(value, field_name):
@@ -476,10 +546,16 @@ def find_partner(vendor_id, partner_name):
     """
     Identify the driver for this row.
 
-    - Vendor ID present: match on Vendor ID AND Partner name together
-      (both must match the same record) as a cross-check.
-    - Vendor ID empty: match on Partner name alone.
+    - Vendor ID present: fetched by Vendor ID alone (the trusted primary
+      key). The Partner name is cross-checked purely for visibility — a
+      mismatch is logged as a warning, not raised as an error. Vendor ID
+      always wins.
+    - Vendor ID empty: matched on Partner name alone, using a
+      case-insensitive, whitespace-normalized comparison so formatting
+      differences (ALL CAPS, extra spaces) don't prevent a real match.
     - Both empty: error, nothing to identify the driver by.
+
+    Note: the is_driver=True filter is intentionally NOT applied here.
     """
     vendor_id = clean(vendor_id)
     partner_name = clean(partner_name)
@@ -489,22 +565,60 @@ def find_partner(vendor_id, partner_name):
             "Both Vendor ID and Partner are empty; cannot identify the driver."
         )
 
-    domain = [
-        # ["is_driver", "=", True],
-        ["active", "=", True],
-    ]
-
     if vendor_id:
-        domain.append(["yango_contractor_id", "=", vendor_id])
-        if partner_name:
-            domain.append(["name", "=", partner_name])
-    else:
-        domain.append(["name", "=", partner_name])
+        rows = rpc(
+            "res.partner",
+            "search_read",
+            [[
+                ["yango_contractor_id", "=", vendor_id],
+                ["active", "=", True],
+            ]],
+            {
+                "fields": [
+                    "id",
+                    "name",
+                    "yango_contractor_id",
+                    "is_driver",
+                    "supplier_rank",
+                ],
+                "limit": 10,
+            },
+        )
 
-    partners = rpc(
+        if len(rows) != 1:
+            raise ValueError(
+                f"Expected exactly one driver for Vendor ID={vendor_id!r}, "
+                f"found {len(rows)}: {rows}"
+            )
+
+        partner = rows[0]
+
+        if partner_name:
+            if _normalize_name(partner_name) != _normalize_name(partner.get("name", "")):
+                # Vendor ID is the trusted key. A name mismatch is logged
+                # so it's visible for review, but does NOT fail the row —
+                # the bill still goes to the partner identified by Vendor ID.
+                logger.warning(
+                    "Name mismatch for Vendor ID=%r: Odoo partner name is "
+                    "%r, CSV Partner is %r. Proceeding using Vendor ID "
+                    "match (Odoo name wins).",
+                    vendor_id,
+                    partner.get("name"),
+                    partner_name,
+                )
+
+        return partner
+
+    # No Vendor ID: match on Partner name alone.
+    target = _normalize_name(partner_name)
+
+    candidates = rpc(
         "res.partner",
         "search_read",
-        [domain],
+        [[
+            ["name", "ilike", partner_name],
+            ["active", "=", True],
+        ]],
         {
             "fields": [
                 "id",
@@ -513,17 +627,22 @@ def find_partner(vendor_id, partner_name):
                 "is_driver",
                 "supplier_rank",
             ],
-            "limit": 10,
+            "limit": 50,
         },
     )
 
-    if len(partners) != 1:
+    matches = [
+        c for c in candidates
+        if _normalize_name(c.get("name", "")) == target
+    ]
+
+    if len(matches) != 1:
         raise ValueError(
-            f"Expected exactly one driver for Vendor ID={vendor_id!r} "
-            f"Partner={partner_name!r}, found {len(partners)}: {partners}"
+            f"Expected exactly one driver for Partner={partner_name!r}, "
+            f"found {len(matches)}: {matches}"
         )
 
-    return partners[0]
+    return matches[0]
 
 
 def find_existing_bill(partner_id, reference):
@@ -1084,6 +1203,11 @@ def main():
         "from the CSV. No hardcoded fallback for any of them. "
         "An empty Tax cell means no withholding."
     )
+    logger.info(
+        "RPC_MAX_RETRIES=%s | RPC_RETRY_DELAY_SECONDS=%s",
+        RPC_MAX_RETRIES,
+        RPC_RETRY_DELAY_SECONDS,
+    )
     logger.info("=" * 80)
 
     if not INPUT_FILE.exists():
@@ -1154,7 +1278,14 @@ def main():
         # Start each run with a clean output CSV rather than appending
         # to whatever is left from a previous run against this input file.
         if OUTPUT_CSV.exists():
-            OUTPUT_CSV.unlink()
+            try:
+                OUTPUT_CSV.unlink()
+            except PermissionError:
+                raise RuntimeError(
+                    f"Cannot overwrite {OUTPUT_CSV} because it is open "
+                    "in another program (e.g. Excel). Close the file "
+                    "and run the script again."
+                )
 
         stats = {
             "read": 0,
