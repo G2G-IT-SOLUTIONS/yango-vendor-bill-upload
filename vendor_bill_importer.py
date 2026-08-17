@@ -546,10 +546,17 @@ def find_partner(vendor_id, partner_name):
     """
     Identify the driver for this row.
 
-    - Vendor ID present: fetched by Vendor ID alone (the trusted primary
-      key). The Partner name is cross-checked purely for visibility — a
-      mismatch is logged as a warning, not raised as an error. Vendor ID
-      always wins.
+    - Vendor ID present, exactly one match: fetched by Vendor ID (the
+      trusted primary key). Partner name is cross-checked purely for
+      visibility — a mismatch is logged as a warning, not raised.
+      Vendor ID always wins.
+    - Vendor ID present, MULTIPLE matches (duplicate data in Odoo):
+      disambiguated using the CSV Partner name (normalized). If that
+      narrows it to exactly one candidate, that one is used (with a
+      warning logged, since this indicates Odoo has duplicate partner
+      records for this Vendor ID and should be cleaned up). If it
+      doesn't narrow to exactly one, the row fails with the full
+      candidate list rather than guessing.
     - Vendor ID empty: matched on Partner name alone, using a
       case-insensitive, whitespace-normalized comparison so formatting
       differences (ALL CAPS, extra spaces) don't prevent a real match.
@@ -585,10 +592,46 @@ def find_partner(vendor_id, partner_name):
             },
         )
 
-        if len(rows) != 1:
+        if len(rows) == 0:
             raise ValueError(
                 f"Expected exactly one driver for Vendor ID={vendor_id!r}, "
-                f"found {len(rows)}: {rows}"
+                f"found 0."
+            )
+
+        if len(rows) > 1:
+            # Duplicate data in Odoo: the same Vendor ID is assigned to
+            # more than one partner record. Don't guess — try to
+            # disambiguate using the CSV's Partner name (normalized).
+            # Only proceed if that narrows it to exactly one candidate;
+            # otherwise fail with the full candidate list for review.
+            if partner_name:
+                name_matches = [
+                    r for r in rows
+                    if _normalize_name(r.get("name", "")) == _normalize_name(partner_name)
+                ]
+            else:
+                name_matches = []
+
+            if len(name_matches) == 1:
+                logger.warning(
+                    "Vendor ID=%r is assigned to %s partner records in "
+                    "Odoo (duplicate data). Disambiguated using Partner "
+                    "name match -> partner id=%s (%r). This should be "
+                    "cleaned up in Odoo.",
+                    vendor_id,
+                    len(rows),
+                    name_matches[0]["id"],
+                    name_matches[0]["name"],
+                )
+                partner = name_matches[0]
+                return partner
+
+            raise ValueError(
+                f"Vendor ID={vendor_id!r} is assigned to {len(rows)} "
+                f"partner records in Odoo, and the CSV Partner name "
+                f"{partner_name!r} did not uniquely match one of them. "
+                f"Candidates: {rows}. This Vendor ID has duplicate "
+                "partner records in Odoo and needs manual cleanup."
             )
 
         partner = rows[0]
