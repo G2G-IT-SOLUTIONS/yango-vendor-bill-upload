@@ -1,0 +1,5 @@
+﻿Partner,Vendor ID,Reference,Invoice/Bill Date,Payment Reference,Due Date,Invoice lines/Label,Invoice lines/Account,Invoice lines/Analytic Distribution,Invoice lines/Unit Price,Invoice lines/Taxes,,,,,,status,reason
+Amin Ibrahim,aa0e3e57379349c99cfabeccf658b416,CJ1384VS6B,2025-10-01,CJ1384VS6B,2025-10-01,Driver Bonus,2203,"{""153"": 100.0}",16239.65,3% WH,,,,,,failed,"Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'"
+ZELALEM MESERET FASIKA,7960ce7442b74b1aaa99e5445fe70fb4,CJ1984VV37,2025-10-01,CJ1984VV37,2025-10-01,Driver Bonus,2203,"{""153"": 100.0}",16218.22,3% WH,,,,,,failed,"Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'"
+Getahnu Samuel,bc4c3300ad4d4bbea532ef5a199638b4,CJ1284VS6A,2025-10-01,CJ1284VS6A,2025-10-01,Driver Bonus,2203,"{""153"": 100.0}",16188.8,3% WH,,,,,,failed,"Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'"
+HENOKE ZEYENU KEMALE,b9455de730774cd7a7275cfa6134222f,CJ1684VUCQ,2025-10-01,CJ1684VUCQ,2025-10-01,Driver Bonus,2203,"{""153"": 100.0}",16171.31,3% WH,,,,,,failed,"Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'"

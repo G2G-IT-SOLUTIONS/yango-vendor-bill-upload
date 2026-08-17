@@ -1,0 +1,152 @@
+2026-08-17 11:26:58,549 | INFO | ================================================================================
+2026-08-17 11:26:58,550 | INFO | YANGO VENDOR BILL IMPORT START
+2026-08-17 11:26:58,550 | INFO | Input: C:\Projects\G2G Group\yango-vendor-bill-upload\bills\october.csv
+2026-08-17 11:26:58,550 | INFO | Output CSV: C:\Projects\G2G Group\yango-vendor-bill-upload\logs\october_logs.csv
+2026-08-17 11:26:58,550 | INFO | DRY_RUN: False
+2026-08-17 11:26:58,550 | INFO | MAX_RECORDS: 100000
+2026-08-17 11:26:58,551 | INFO | ACCOUNTING_DATE_MODE: bill_date
+2026-08-17 11:26:58,551 | INFO | Account / Tax / Analytic Distribution: all read per-row from the CSV. No hardcoded fallback for any of them. An empty Tax cell means no withholding.
+2026-08-17 11:26:58,560 | INFO | RPC_MAX_RETRIES=3 | RPC_RETRY_DELAY_SECONDS=3.0
+2026-08-17 11:26:58,560 | INFO | ================================================================================
+2026-08-17 11:26:59,536 | INFO | Connected to Odoo https://production.g2gitsolutions.com | DB=production | UID=748 | Version=17.0+e-20260723
+2026-08-17 11:27:00,143 | INFO | Payment journal: Tele Short Code 525020 | ID=59 | type=bank
+2026-08-17 11:27:00,668 | ERROR | FAILED | row=2 | vendor=aa0e3e57379349c99cfabeccf658b416 | ref=CJ1384VS6B | error=Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+2026-08-17 11:27:00,703 | ERROR | Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 477, in parse_date
+    return datetime.strptime(text, "%m/%d/%Y").date()
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 789, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 555, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+                     (data_string, format))
+ValueError: time data '2025-10-01' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1317, in main
+    result = process_row(
+        row_number,
+        row,
+        payment_journal,
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1130, in process_row
+    bill_id = create_bill(row, partner)
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 725, in create_bill
+    bill_date = parse_date(
+        row.get("Invoice/Bill Date"),
+        "Invoice/Bill Date"
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 479, in parse_date
+    raise ValueError(
+        f"{field_name} must be in MM/DD/YYYY format, got: {value!r}"
+    )
+ValueError: Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+
+2026-08-17 11:27:01,248 | ERROR | FAILED | row=3 | vendor=7960ce7442b74b1aaa99e5445fe70fb4 | ref=CJ1984VV37 | error=Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+2026-08-17 11:27:01,252 | ERROR | Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 477, in parse_date
+    return datetime.strptime(text, "%m/%d/%Y").date()
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 789, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 555, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+                     (data_string, format))
+ValueError: time data '2025-10-01' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1317, in main
+    result = process_row(
+        row_number,
+        row,
+        payment_journal,
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1130, in process_row
+    bill_id = create_bill(row, partner)
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 725, in create_bill
+    bill_date = parse_date(
+        row.get("Invoice/Bill Date"),
+        "Invoice/Bill Date"
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 479, in parse_date
+    raise ValueError(
+        f"{field_name} must be in MM/DD/YYYY format, got: {value!r}"
+    )
+ValueError: Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+
+2026-08-17 11:27:01,800 | ERROR | FAILED | row=4 | vendor=bc4c3300ad4d4bbea532ef5a199638b4 | ref=CJ1284VS6A | error=Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+2026-08-17 11:27:01,803 | ERROR | Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 477, in parse_date
+    return datetime.strptime(text, "%m/%d/%Y").date()
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 789, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 555, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+                     (data_string, format))
+ValueError: time data '2025-10-01' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1317, in main
+    result = process_row(
+        row_number,
+        row,
+        payment_journal,
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1130, in process_row
+    bill_id = create_bill(row, partner)
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 725, in create_bill
+    bill_date = parse_date(
+        row.get("Invoice/Bill Date"),
+        "Invoice/Bill Date"
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 479, in parse_date
+    raise ValueError(
+        f"{field_name} must be in MM/DD/YYYY format, got: {value!r}"
+    )
+ValueError: Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+
+2026-08-17 11:27:02,315 | ERROR | FAILED | row=5 | vendor=b9455de730774cd7a7275cfa6134222f | ref=CJ1684VUCQ | error=Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+2026-08-17 11:27:02,319 | ERROR | Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 477, in parse_date
+    return datetime.strptime(text, "%m/%d/%Y").date()
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 789, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shadows bocx\AppData\Local\Programs\Python\Python313\Lib\_strptime.py", line 555, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+                     (data_string, format))
+ValueError: time data '2025-10-01' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1317, in main
+    result = process_row(
+        row_number,
+        row,
+        payment_journal,
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 1130, in process_row
+    bill_id = create_bill(row, partner)
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 725, in create_bill
+    bill_date = parse_date(
+        row.get("Invoice/Bill Date"),
+        "Invoice/Bill Date"
+    )
+  File "C:\Projects\G2G Group\yango-vendor-bill-upload\vendor_bill_importer.py", line 479, in parse_date
+    raise ValueError(
+        f"{field_name} must be in MM/DD/YYYY format, got: {value!r}"
+    )
+ValueError: Invoice/Bill Date must be in MM/DD/YYYY format, got: '2025-10-01'
+
